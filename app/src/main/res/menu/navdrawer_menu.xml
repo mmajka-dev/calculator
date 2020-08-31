@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/basic3"
+        android:title="Basic calculator"
+        />
+
+    <item
+        android:id="@+id/converterFragment"
+        android:title="Units converter"
+        />
+
+    <item
+        android:id="@+id/currencyFragment3"
+        android:title="Currency"
+        />
+
+    <item
+        android:id="@+id/financesFragment3"
+        android:title="Finances"
+        />
+</menu>
