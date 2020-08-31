@@ -39,7 +39,7 @@ class basic : Fragment() {
 
         return bind.root
     }
-
+//Methods from ViewModel
     private fun clickListeners(){
         bind.include.one.setOnClickListener {
             onDecimal(it, resultTextView)
