@@ -29,19 +29,14 @@ class BasicViewModel: ViewModel(){
     val result: LiveData<Double>
         get() = _result
 
-    //region-------------------------Funs-----------------------------------------------------------
+
     fun initStates(){
         _lastNumeric.value = false
         _lastDot.value = false
         _stateError.value = false
     }
 
-    fun onClear(view: View){
-        (view as TextView).text = ""
-        initStates()
-    }
-
-
+//Libary method converts string to expresion and throw resul
     fun onEqual(resultTV: View, operation: TextView){
         if (_lastNumeric.value!! && !_stateError.value!!){
             val textExpression = (resultTV as TextView).text.toString()
@@ -58,7 +53,7 @@ class BasicViewModel: ViewModel(){
     }
 
 
-
+//Write dot if dot isn't last. If it is then state error = true
     fun onDot(view: TextView){
         if (_lastNumeric.value!! && !_stateError.value!! && !_lastDot.value!!) {
             view.append(".")
@@ -67,6 +62,7 @@ class BasicViewModel: ViewModel(){
         }
     }
 
+//Like onDot
     fun onOperator(view: TextView, button: View){
         if (_lastNumeric.value!! && !_stateError.value!!) {
             val text = (button as Button).text.toString()
@@ -76,7 +72,7 @@ class BasicViewModel: ViewModel(){
 
         }
     }
-
+//Adds to TextView decimal number if stateError = false
     fun onDecimal(button: View, resultTextView: TextView){
         if (_stateError.value!!){
             resultTextView.text = (button as Button).text
@@ -87,6 +83,7 @@ class BasicViewModel: ViewModel(){
         _lastNumeric.value = true
     }
 
+//Clears result and operation TextView
     fun onResultClear(operation: View, result: View){
         (operation as TextView).text = ""
         (result as TextView).text = ""
